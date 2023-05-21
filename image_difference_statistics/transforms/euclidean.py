@@ -1,5 +1,3 @@
 """
 Rotational/translation Euclidean transforms.
 """
-
-
