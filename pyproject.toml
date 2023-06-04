@@ -14,3 +14,11 @@ dependencies = [
 
 [tool.setuptools]
 packages = ["image_difference_statistics"]
+
+[[tool.mypy.overrides]]
+module = [
+    "matplotlib.*",
+    "PIL",
+    "skimage.*",
+]
+ignore_missing_imports = true

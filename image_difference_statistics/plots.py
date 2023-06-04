@@ -1,3 +1,7 @@
+"""
+Plotting functions.
+"""
+
 from typing import List
 
 import matplotlib.pyplot as plt

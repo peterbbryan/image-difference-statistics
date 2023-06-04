@@ -1,4 +1,6 @@
-import logging
+"""
+Checks to validate data types.
+"""
 
 import numpy as np
 
