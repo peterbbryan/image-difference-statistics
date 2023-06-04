@@ -3,6 +3,8 @@ from typing import List
 import matplotlib.pyplot as plt
 import numpy as np
 
+from image_difference_statistics.data import check
+
 
 def imshow(imdata: np.ndarray) -> None:
     """
@@ -12,11 +14,7 @@ def imshow(imdata: np.ndarray) -> None:
         imdata: Image data.
     """
 
-    assert imdata.min() >= 0, "8 bit imagery"
-    assert imdata.max() <= 255, "8 bit imagery"
-
-    imdata = np.squeeze(imdata)
-    assert imdata.ndim == 2, f"Invalid shape: {imdata.shape()}"
+    check.check_8bit(imdata=imdata)
 
     plt.imshow(imdata, clim=(0, 255), cmap="gray")
     plt.axis("off")
@@ -32,8 +30,10 @@ def imshow_many(imdata_list: List[np.ndarray]) -> None:
 
     n_images = len(imdata_list)
 
-    for ind, imdata in enumerate(imdata_list, 1):
+    for ind, imdata in enumerate(imdata_list):
 
-        plt.subplot(1, n_images, ind)
+        check.check_8bit(imdata=imdata)
+
+        plt.subplot(1, n_images, ind+1)
+        plt.title(ind)
         imshow(imdata=imdata)
-        

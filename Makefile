@@ -15,3 +15,6 @@ check:
 
 test:
 	python -m pytest
+
+req-compile:
+	pip-compile > requirements/project-requirements.txt
