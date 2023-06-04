@@ -31,9 +31,8 @@ def imshow_many(imdata_list: List[np.ndarray]) -> None:
     n_images = len(imdata_list)
 
     for ind, imdata in enumerate(imdata_list):
-
         check.check_8bit(imdata=imdata)
 
-        plt.subplot(1, n_images, ind+1)
+        plt.subplot(1, n_images, ind + 1)
         plt.title(ind)
         imshow(imdata=imdata)

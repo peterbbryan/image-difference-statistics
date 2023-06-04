@@ -8,7 +8,7 @@ from PIL import Image
 from image_difference_statistics.data import check
 
 
-def rotate(imdata: np.ndarray, angle: float) ->  np.ndarray:
+def rotate(imdata: np.ndarray, angle: float) -> np.ndarray:
     """
     Rotate image. Fill missing values with mean.
 
@@ -30,4 +30,3 @@ def rotate(imdata: np.ndarray, angle: float) ->  np.ndarray:
     pil_image = pil_image.rotate(angle=angle, fillcolor=mean_value)
 
     return np.array(pil_image)
-
